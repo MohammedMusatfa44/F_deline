@@ -1,0 +1,35 @@
+{
+  "name": "dline",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@mdi/font": "7.0.96",
+    "axios": "^1.6.7",
+    "core-js": "^3.29.0",
+    "roboto-fontface": "*",
+    "swiper": "^11.0.5",
+    "vanilla-tilt": "^1.8.1",
+    "vanilla-tilt-vue": "^0.1.3",
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.0",
+    "vue3-carousel": "^0.3.1",
+    "vuetify": "^3.0.0",
+    "webfontloader": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.3.11",
+    "eslint": "^8.37.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "vite": "^4.2.0",
+    "vite-plugin-vuetify": "^1.0.0"
+  }
+}

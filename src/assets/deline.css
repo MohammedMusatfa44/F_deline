@@ -1,0 +1,137 @@
+:root {
+	--mainColor: #fcfcfc;
+	--secondColor: #0c2444dd;
+	--theirdColor: #771b19;
+}
+body {
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+.v-card {
+	background-color: var(--mainColor) !important;
+	box-shadow: none !important;
+	border-radius: none;
+	background-color: none !important;
+}
+.v-toolbar {
+	overflow: visible !important;
+}
+/* 
+.v-app-bar {
+	box-shadow: none !important;
+} */
+.v-main {
+	padding: 0 !important;
+}
+.v-toolbar__content {
+	height: fit-content !important;
+}
+header {
+	/* padding: 0 100px; */
+	background-color: transparent !important;
+	/* box-shadow: 4px 1px 20px 2px rgba(255, 255, 255, 0.597) !important; */
+	box-shadow: none !important;
+}
+
+a {
+	text-decoration: none !important;
+}
+a,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Cairo' !important;
+}
+.v-carousel__controls {
+	background-color: #ffffff00 !important;
+	margin-bottom: 40px;
+}
+.v-btn--icon.v-btn--density-default {
+	width: 20px !important;
+	height: 20px !important;
+}
+
+.v-btn--active {
+	background-color: var(--secondColor) !important;
+}
+.mdi-circle::before {
+	color: var(--secondColor);
+}
+
+.title__card::after {
+	content: '';
+	width: 250px;
+	transform: rotate(180deg);
+	height: 5px;
+	background-color: var(--secondColor);
+	position: absolute;
+	right: 50%;
+	transform: translateX(126px);
+	bottom: 0;
+}
+
+.title__card::before {
+	content: '';
+	width: 10px;
+	transform: rotate(180deg);
+	height: 5px;
+	background-color: white;
+	position: absolute;
+	z-index: 1;
+	right: 50%;
+	transform: translateX(126px);
+	bottom: 0;
+	animation: card-title-animation 2s infinite alternate ease-in-out;
+}
+.title__card {
+	margin-bottom: 100px;
+	color: var(--secondColor);
+	font-size: 40px;
+	position: relative;
+}
+
+@media (max-width: 960px) {
+	.title__card {
+		margin-bottom: 100px;
+		color: var(--secondColor);
+		font-size: 40px;
+		position: relative;
+	}
+
+	@keyframes card-title-animation {
+		0% {
+			right: 55%;
+		}
+
+		100% {
+			right: 85%;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	@keyframes card-title-animation {
+		0% {
+			right: 55%;
+		}
+
+		100% {
+			right: 120%;
+		}
+	}
+}
+
+@keyframes card-title-animation {
+	0% {
+		right: 51%;
+	}
+
+	100% {
+		right: 68%;
+	}
+}
