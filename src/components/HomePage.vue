@@ -33,13 +33,12 @@
           <a :href="facebook">
             <v-icon icon="mdi-facebook"></v-icon>
           </a>
-          <a>
+          <a :href="instagram">
             <v-icon icon="mdi-instagram"></v-icon>
           </a>
-          <a>
+          <a :href="linkedin">
             <v-icon icon="mdi-linkedin"></v-icon>
           </a>
-
         </v-card>
       </v-col>
     </v-row>

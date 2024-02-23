@@ -6,6 +6,7 @@
 body {
 	overflow: hidden;
 	scroll-behavior: smooth;
+	position: relative;
 }
 .v-card {
 	background-color: var(--mainColor) !important;

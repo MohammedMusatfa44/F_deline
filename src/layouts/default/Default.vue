@@ -35,6 +35,9 @@
         </v-col>
       </v-row>
     </v-app-bar>
+    <loder-page>
+
+    </loder-page>
     <home-page id="1" />
     <about-page id="2" />
     <services-page id="3" />
@@ -46,6 +49,7 @@
 </template>
 
 <script >
+import loderPage from '../../model/loderPage.vue'
 import DefaultView from './View.vue';
 import HomePage from '../../components/HomePage.vue'
 import AboutPage from '../../components/AboutPage.vue'
@@ -67,12 +71,14 @@ export default {
   ,
   components: {
     DefaultView,
+    loderPage,
     HomePage,
     AboutPage,
     ServicesPage,
     PartnersPage,
     ContactPage,
-    FooterPage
+    FooterPage,
+
   },
   methods: {
     openmenu() {
@@ -106,6 +112,11 @@ ul {
 
     a {
       color: white;
+      transition: .5s;
+
+      &:hover {
+        color: var(--secondColor);
+      }
     }
   }
 
@@ -153,6 +164,23 @@ ul {
   background-color: transparent !important;
 }
 
+.child2 {
+  transition: 0.5s;
+
+  &:hover {
+    background-color: var(--secondColor);
+
+    a {
+      color: white !important;
+
+    }
+  }
+
+  a {
+    color: var(--secondColor) !important;
+  }
+}
+
 button {
   background-color: #ffffff;
   color: var(--secondColor);
@@ -167,7 +195,7 @@ button {
   color: white;
 
   a {
-    color: white;
+    color: white !important;
   }
 }
 
@@ -261,6 +289,8 @@ button {
   .child2 {
     background-color: transparent !important;
     padding: 0px 20px !important;
+
+
   }
 
   ul {
