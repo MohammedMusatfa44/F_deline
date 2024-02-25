@@ -35,19 +35,18 @@
         </v-col>
       </v-row>
     </v-app-bar>
-    <loder-page>
+    <loder-page :dataFetched="dataFetched">
 
     </loder-page>
-    <home-page id="1" />
-    <about-page id="2" />
+    <home-page id="1" @data-fetched="dataFetched = true" />
+    <about-page id="2" @data-fetched="handleDataFetched" />
     <services-page id="3" />
     <partners-page id="4" />
     <contact-page id="5" />
-    <footer-page />
+    <footer-page :item="this.items" />
     <default-view />
   </v-app>
 </template>
-
 <script >
 import loderPage from '../../model/loderPage.vue'
 import DefaultView from './View.vue';
@@ -64,7 +63,8 @@ export default {
     return {
       open: false,
       scro: false,
-
+      dataFetched: false,
+      items: [],
     }
 
   }
@@ -92,13 +92,21 @@ export default {
         this.scro = false
       }
 
-    }
+    },
+    handleDataFetched(data) {
+      // 'data' contains the data passed from the HomePage component
+      this.items = data
+      // You can now use the data here
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
 
   }
 
+  ,
+  created() {
+  }
 }
 
 

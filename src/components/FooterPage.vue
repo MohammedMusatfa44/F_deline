@@ -34,8 +34,7 @@
           <v-card
             class="v-col-12 text-center bg-transparent pa-5 d d-flex justify-end align-start flex-column  text-left">
             <h6 class="text-lg-h6 text-md-caption text-body-1 text-start">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut ipsa, possimus at nesciunt fuga, fugit aperiam
-              id
+              {{ item.description }}
             </h6>
             <v-img src="../assets/image/logo.png" class="footer__img" width="200" height="200"></v-img>
 
@@ -51,6 +50,7 @@
 import axios from 'axios';
 
 export default {
+  props: ['item'],
   data: () => ({
     items: [
 

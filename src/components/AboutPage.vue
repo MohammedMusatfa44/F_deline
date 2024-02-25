@@ -15,30 +15,47 @@
         </p>
 
       </v-col>
+
+
       <v-col lg="5" md="5" sm="10" class="v-col-10 mt-5 right__card">
 
         <div class="about__img w-100 h-100 position-relative">
-          <img :src="items.image" alt="" class="w-50">
+          <Tilt>
+
+            <img :src="items.image" alt="" class="w-50 img">
+          </Tilt>
 
 
         </div>
       </v-col>
+
     </v-row>
   </v-layout>
 </template>
 
 <script>
 import axios from 'axios';
+import Tilt from 'vanilla-tilt-vue'
+
 
 export default {
   data() {
     return {
-      items: []
+      items: [],
+      options: {
+        scale: 1,
+        speed: 1000,
+
+
+
+      }
 
     }
   },
+  components: { Tilt },
 
-  
+
+
 
 
   mounted() {
@@ -49,8 +66,9 @@ export default {
     fetchData() {
       axios.get('GetAbout') // Relative URL, will be appended to the base URL
         .then(response => {
-          console.log(response.data);
           this.items = response.data[0];
+          this.$emit('data-fetched', this.items);
+
 
         })
         .catch(error => {
@@ -87,6 +105,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.img {
+  animation: effect 1s linear infinite alternate;
+}
+
 .about__img::after {
   content: "";
   width: 80px;
@@ -199,6 +221,21 @@ export default {
   }
 
 }
+
+@keyframes effect {
+
+  0% {
+    transform: translateX(-2px) translateY(-2px) scale(1);
+  }
+
+  100% {
+
+    transform: translateX(0px) translateY(0px) scale(1.05);
+
+  }
+
+}
+
 
 @media (max-width: 960px) {
 

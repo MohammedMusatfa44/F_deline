@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="loder__parent v-col-12 position-fixed" v-if="hideLoader" :class="{ 'hide__loder': hideLoader }">
+  <v-layout class="loder__parent v-col-12 position-fixed" :class="{ 'hide__loder': dataFetched }">
     <v-row>
       <v-col class="d-flex justify-center align-center" lg="12" md="12" sm="12">
         <div class="wrapper  text-center position-relative parent__img">
@@ -20,10 +20,7 @@
           <div class="position-absolute parent_text w-100">
             <h2 class=" title__card ">
               Deline
-
-
             </h2>
-
           </div>
 
 
@@ -35,7 +32,11 @@
 </template>
 
 <script>
+// import axios from 'axios';
+
 export default {
+  props: ['dataFetched'],
+
   data() {
     return {
       hideLoader: true,
@@ -43,6 +44,8 @@ export default {
     }
   },
   created() {
+    // this.fetchData();
+
     this.$nextTick(() => {
       setTimeout(() => {
         // this.changeTextLetter();
@@ -50,7 +53,23 @@ export default {
       }, 2000);
     });
   },
+  mounted() {
+
+
+
+
+  },
   methods: {
+    // fetchData() {
+    //   axios.get('GetAllGallery') // Relative URL, will be appended to the base URL
+    //     .then(response => {
+    //       this.hideLoader = false;
+
+    //     })
+    //     .catch(error => {
+    //       console.error('Error fetching data:', error);
+    //     });
+    // },
     // changeTextLetter() {
     //   const target = document.querySelector('.letter-change-text');
     //   const originalText = target.innerText;
@@ -76,14 +95,9 @@ export default {
     //  },
 
     /////////////////////
-    // hideLoaderAfterTimeout() {
-    //   setTimeout(() => {
-    //     this.hideopacty = true;
-    //   }, 10000); // 10 seconds
-    //   setTimeout(() => {
-    //     this.hideLoader = false;
-    //   }, 12000); // 12 seconds
-    // },
+    hideLoaderAfterTimeout() {
+
+    },
   },
 };
 </script>
@@ -124,7 +138,7 @@ export default {
 }
 
 .hide__loder {
-  // animation:hide-loder 0.5s 9s ease-out forwards;
+  animation: hide-loder 0.5s 5s ease-out forwards, hideLoder 1s 6s linear forwards;
 }
 
 .parent__img {
@@ -283,6 +297,18 @@ export default {
 
   100% {
     opacity: 1;
+  }
+
+}
+
+@keyframes hideLoder {
+  0% {
+    display: block;
+
+  }
+
+  100% {
+    display: none;
   }
 
 }

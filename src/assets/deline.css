@@ -116,6 +116,9 @@ h6 {
 }
 
 @media (max-width: 500px) {
+	.title__card {
+		font-size: 30px !important;
+	}
 	@keyframes card-title-animation {
 		0% {
 			right: 55%;
@@ -133,6 +136,6 @@ h6 {
 	}
 
 	100% {
-		right: 68%;
+		right: 108%;
 	}
 }

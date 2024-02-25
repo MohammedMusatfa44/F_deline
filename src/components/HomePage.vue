@@ -66,6 +66,8 @@ export default {
       axios.get('GetAllGallery') // Relative URL, will be appended to the base URL
         .then(response => {
           this.items = response.data;
+          this.$emit('data-fetched');
+
 
         })
         .catch(error => {
@@ -74,7 +76,6 @@ export default {
       axios.get('GetAllSocailMedia') // Relative URL, will be appended to the base URL
         .then(response => {
           const mydata = response.data;
-          console.log(mydata);
           mydata.forEach(e => {
 
             this.facebook = e.title == "Facebook" ? 'www.facebook.com' : e.image;
